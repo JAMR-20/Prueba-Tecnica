@@ -53,7 +53,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 .message("An unexpected error ocurred")
                 .build();
 
-        return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR)
+        return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 
