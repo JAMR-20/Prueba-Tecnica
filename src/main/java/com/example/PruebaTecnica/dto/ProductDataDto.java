@@ -1,7 +1,7 @@
 package com.example.PruebaTecnica.dto;
 import com.example.PruebaTecnica.entity.ClientEntity;
-import com.example.PruebaTecnica.enums.EstadoCuenta;
-import com.example.PruebaTecnica.enums.TipoCuenta;
+import com.example.PruebaTecnica.enums.AccountStatus;
+import com.example.PruebaTecnica.enums.TypeAccount;
 import lombok.*;
 
 
@@ -11,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDataDto {
-    private EstadoCuenta estado;
+    private AccountStatus estado;
 
     private String numeroCuenta;
 
@@ -19,7 +19,7 @@ public class ProductDataDto {
 
     private Boolean exentaGMF;
 
-    private TipoCuenta tipoCuenta;
+    private TypeAccount typeAccount;
 
     private ClientEntity cliente;
 }

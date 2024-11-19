@@ -1,7 +1,7 @@
 package com.example.PruebaTecnica.entity;
 
-import com.example.PruebaTecnica.enums.EstadoCuenta;
-import com.example.PruebaTecnica.enums.TipoCuenta;
+import com.example.PruebaTecnica.enums.AccountStatus;
+import com.example.PruebaTecnica.enums.TypeAccount;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import lombok.AllArgsConstructor;
@@ -23,7 +23,7 @@ public class ProductEntity {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private EstadoCuenta estado;
+    private AccountStatus estado;
 
     @Column(name = "numero_cuenta", length = 10, unique = true)
     private String numeroCuenta;
@@ -40,7 +40,7 @@ public class ProductEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_cuenta")
-    private TipoCuenta tipoCuenta;
+    private TypeAccount tipoCuenta;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)

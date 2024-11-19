@@ -1,6 +1,6 @@
 package com.example.PruebaTecnica.enums;
 
-public enum TipoCuenta {
+public enum TypeAccount {
     AHORROS,
     CORRIENTE
 }

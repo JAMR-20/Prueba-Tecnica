@@ -1,6 +1,6 @@
 package com.example.PruebaTecnica.enums;
 
-public enum EstadoCuenta {
+public enum AccountStatus {
     ACTIVA,
     INACTIVA,
     CANCELADA
