@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -30,7 +31,7 @@ public class ProductEntity {
 
     @DecimalMin(value = "0.0", inclusive = false, message = "El saldo debe ser mayor a $0")
     @Column(precision = 15, scale = 2)
-    private String saldo;
+    private BigDecimal saldo;
 
     private Boolean exentaGMF;
 

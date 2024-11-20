@@ -11,6 +11,7 @@ import lombok.*;
 @Data
 
 public class ProductDataDto {
+
     private AccountStatus estado;
 
     private String numeroCuenta;
