@@ -5,6 +5,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Builder
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 public class TransactionDataDto {
     private String tipoTransaccion;
 
-    private String saldoDisponible;
+    private BigDecimal monto;
 
     private LocalDate fechaTransaccion;
 

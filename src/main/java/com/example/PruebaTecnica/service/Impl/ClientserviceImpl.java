@@ -65,11 +65,15 @@ public class ClientserviceImpl implements ClientService {
 
     @Override
     public void delete(Long id) throws ClientNotFoundException {
-        if (!clienRepository.existsById(id)){
-            throw new IllegalArgumentException("Cliente no encontrado con id " + id);
-
+        if (!clienRepository.existsById(id)) {
+            throw new ClientNotFoundException("Cliente no encontrado con id " + id);
         }
-        clienRepository.existsById(id);
+        try {
+            clienRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new IllegalStateException("Error al intentar eliminar el cliente con id " + id, e);
+        }
+        clienRepository.deleteById(id);
     }
 
     @Override

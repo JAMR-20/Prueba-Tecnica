@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -22,7 +23,7 @@ public class TransactionEntity {
     @Column(name = "tipo_transaccion")
     private String tipoTransaccion;
 
-    private String saldoDisponible;
+    private BigDecimal monto;
 
     @Column(name = "fecha_transaccion")
     private LocalDate fechaTransaccion;

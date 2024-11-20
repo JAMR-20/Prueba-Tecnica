@@ -4,6 +4,7 @@ import com.example.PruebaTecnica.entity.ProductEntity;
 import lombok.Builder;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Builder
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 public class TransactionResponseDataDto {
     private String tipoTransaccion;
 
-    private String saldoDisponible;
+    private BigDecimal monto;
 
     private LocalDate fechaTransaccion;
 
