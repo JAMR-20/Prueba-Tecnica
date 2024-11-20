@@ -9,8 +9,7 @@ import lombok.*;
 
 @Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ProductDataDto {
     private AccountStatus estado;
 

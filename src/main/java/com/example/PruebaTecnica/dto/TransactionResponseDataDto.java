@@ -1,18 +1,15 @@
 package com.example.PruebaTecnica.dto;
 
 import com.example.PruebaTecnica.entity.ProductEntity;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class TransactionRequestDto {
+
+public class TransactionResponseDataDto {
     private String tipoTransaccion;
 
     private String saldoDisponible;

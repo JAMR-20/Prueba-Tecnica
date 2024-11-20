@@ -6,10 +6,9 @@ import lombok.*;
 
 @Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 
-    public class ProductRequestDto {
+
+    public class ProductResponseDataDto {
     private AccountStatus estado;
 
     private String numeroCuenta;

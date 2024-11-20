@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class ClientDataDto {
 
@@ -24,4 +24,8 @@ public class ClientDataDto {
     @NotBlank(message = "El correo electronico es obligatorio")
     @Email(message = "Ingrese un correo con un formato xxxx@xxxxx.xxx")
     private String email;
+
+    private String tipoIdentificacion;
+
+    private LocalDate fechaNacimiento;
 }
