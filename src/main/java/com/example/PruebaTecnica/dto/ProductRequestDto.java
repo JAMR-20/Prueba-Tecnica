@@ -4,16 +4,18 @@ import com.example.PruebaTecnica.enums.AccountStatus;
 import com.example.PruebaTecnica.enums.TypeAccount;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Builder
 @Data
 
 
-    public class ProductResponseDataDto {
+    public class ProductRequestDto {
     private AccountStatus estado;
 
     private String numeroCuenta;
 
-    private String saldo;
+    private BigDecimal saldo;
 
     private Boolean exentaGMF;
 

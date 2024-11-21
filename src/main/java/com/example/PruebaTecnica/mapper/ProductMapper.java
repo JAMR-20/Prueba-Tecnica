@@ -1,14 +1,14 @@
 package com.example.PruebaTecnica.mapper;
 
 import com.example.PruebaTecnica.dto.ProductDataDto;
-import com.example.PruebaTecnica.dto.ProductResponseDataDto;
+import com.example.PruebaTecnica.dto.ProductRequestDto;
 import com.example.PruebaTecnica.dto.ProductResponseDto;
 import com.example.PruebaTecnica.entity.ProductEntity;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductMapper {
-    public ProductEntity toProductEntity (ProductResponseDataDto productRequestDto){
+    public ProductEntity toProductEntity (ProductRequestDto productRequestDto){
         return ProductEntity.builder()
                 .saldo(productRequestDto.getSaldo())
                 .estado(productRequestDto.getEstado())
@@ -20,12 +20,10 @@ public class ProductMapper {
     }
     public ProductDataDto toProductDto (ProductEntity productEntity){
         return ProductDataDto.builder()
-                .cliente(productEntity.getCliente())
-                .estado(productEntity.getEstado())
+                .clienteId(productEntity.getCliente().getId())
                 .exentaGMF(productEntity.getExentaGMF())
-                .numeroCuenta(productEntity.getNumeroCuenta())
                 .saldo(productEntity.getSaldo())
-                .typeAccount(productEntity.getTipoCuenta())
+                .tipoCuenta(productEntity.getTipoCuenta())
                 .build();
     }
     public ProductResponseDto toResponseDto (ProductEntity productEntity){

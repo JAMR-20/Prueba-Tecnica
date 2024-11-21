@@ -1,6 +1,6 @@
 package com.example.PruebaTecnica.service.Impl;
 
-import com.example.PruebaTecnica.dto.ProductResponseDataDto;
+import com.example.PruebaTecnica.dto.ProductRequestDto;
 import com.example.PruebaTecnica.entity.ClientEntity;
 import com.example.PruebaTecnica.entity.ProductEntity;
 import com.example.PruebaTecnica.enums.AccountStatus;
@@ -58,12 +58,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductEntity updateProduct(Long id, ProductResponseDataDto productResponseDataDto){
+    public ProductEntity updateProduct(Long id, ProductRequestDto productRequestDto){
         ProductEntity product = productRepository.findById(id)
                 .orElseThrow(()-> new IllegalArgumentException("Producto no encontrado con id: " +id));
 
-        if (productResponseDataDto.getEstado() != null){
-            product.setEstado(productResponseDataDto.getEstado());
+        if (productRequestDto.getEstado() != null){
+            product.setEstado(productRequestDto.getEstado());
 
             if (product.getTipoCuenta() == TypeAccount.AHORROS&&
                 product.getEstado() == AccountStatus.CANCELADA&&

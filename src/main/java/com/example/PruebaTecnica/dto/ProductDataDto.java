@@ -5,6 +5,7 @@ import com.example.PruebaTecnica.enums.TypeAccount;
 import jakarta.validation.constraints.DecimalMin;
 import lombok.*;
 
+import java.math.BigDecimal;
 
 
 @Builder
@@ -12,15 +13,8 @@ import lombok.*;
 
 public class ProductDataDto {
 
-    private AccountStatus estado;
-
-    private String numeroCuenta;
-    @DecimalMin(value = "0.0", inclusive = false, message = "El saldo debe ser mayor a $0")
-    private String saldo;
-
+    private TypeAccount tipoCuenta;
+    private BigDecimal saldo;
     private Boolean exentaGMF;
-
-    private TypeAccount typeAccount;
-
-    private ClientEntity cliente;
+    private Long clienteId;
 }

@@ -6,6 +6,7 @@ import com.example.PruebaTecnica.entity.ClientEntity;
 import com.example.PruebaTecnica.exception.ClientNotFoundException;
 import com.example.PruebaTecnica.service.Impl.ClientserviceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,10 +34,12 @@ public class ClientController {
         return clientServiceImpl.save(clientDataDto);
     }
     @DeleteMapping("/delete/{id}")
-    public void delete(Long id) throws ClientNotFoundException{
+    public ResponseEntity<String> delete(@PathVariable Long id) throws ClientNotFoundException {
         clientServiceImpl.delete(id);
+        return ResponseEntity.ok("Cliente eliminado con exito");
     }
-    public ClientEntity update(@RequestBody Long id, @PathVariable ClientEntity clientEntity) throws ClientNotFoundException {
+    @PutMapping("/update/{id}")
+    public ClientEntity update(@PathVariable Long id, @RequestBody ClientEntity clientEntity) throws ClientNotFoundException {
         return clientServiceImpl.update(id, clientEntity);
     }
 }
